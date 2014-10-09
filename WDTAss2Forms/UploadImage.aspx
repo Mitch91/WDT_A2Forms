@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadImage.aspx.cs" Inherits="WDTAss2Forms.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadImage.aspx.cs" Inherits="WDTAss2Forms.UploadImage" %>
 
 <!DOCTYPE html>
 

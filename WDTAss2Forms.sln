@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDTAss2Forms", "WDTAss2Forms\WDTAss2Forms.csproj", "{F780E18A-7D4E-4C3D-9806-00F859AD9804}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B5640FFC-0BF5-4473-AA10-E1B7ABF5B2AD} = {B5640FFC-0BF5-4473-AA10-E1B7ABF5B2AD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WdtA2ClassLibrary", "ClassLibrary1\WdtA2ClassLibrary.csproj", "{B5640FFC-0BF5-4473-AA10-E1B7ABF5B2AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{F780E18A-7D4E-4C3D-9806-00F859AD9804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F780E18A-7D4E-4C3D-9806-00F859AD9804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F780E18A-7D4E-4C3D-9806-00F859AD9804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5640FFC-0BF5-4473-AA10-E1B7ABF5B2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5640FFC-0BF5-4473-AA10-E1B7ABF5B2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5640FFC-0BF5-4473-AA10-E1B7ABF5B2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5640FFC-0BF5-4473-AA10-E1B7ABF5B2AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

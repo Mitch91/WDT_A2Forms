@@ -1,38 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WdtA2ClassLibrary;
 
 namespace WDTAss2Forms
 {
-    public partial class WebForm4 : System.Web.UI.Page
+    public partial class DeleteProduct : System.Web.UI.Page
     {
+        private Boolean loaded = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string productID = Request.QueryString["productID"];
+            String productId = Request.QueryString["productID"];
 
-            //database code here. find the id and remove from db.
-
-
-            //confirm success
-
-            if (productID != null)
+            if (!loaded)
             {
-               status.Text = "Successfully removed product ID: " + productID; 
+                loaded = true;
+                //confirm success
+                if (DatabaseSystem.GetInstance().DeleteProduct(productId))
+                {
+                    status.Text = "Product Successfully deleted!";
+                }
+                else
+                {
+                    status.Text = "Unable to remove product!";
 
+                }
             }
-            else {
+        }
 
-
-                status.Text = "Unable to remove productID!"; 
-
- 
-            
-            
-            }
-
+        protected void Reset(object sender, EventArgs e)
+        {
+            loaded = false;
         }
     }
 }

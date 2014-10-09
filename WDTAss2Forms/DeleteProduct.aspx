@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteProduct.aspx.cs" Inherits="WDTAss2Forms.WebForm4" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteProduct.aspx.cs" Inherits="WDTAss2Forms.DeleteProduct" %>
 
 <!DOCTYPE html>
 
@@ -62,6 +62,10 @@
 
 
                 <asp:label id="status" runat="server" />
+
+
+            <br />
+            <asp:HyperLink ID="dataMangementLink" runat="server" NavigateUrl="~/DataManagement.aspx" OnClick="Reset">Back to Data Mangement Page</asp:HyperLink>
 
 
         </asp:Panel>

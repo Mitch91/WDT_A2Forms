@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DataManagement.aspx.cs" Inherits="WDTAss2Forms.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DataManagement.aspx.cs" Inherits="WDTAss2Forms.DataManagement" %>
 
 <!DOCTYPE html>
 
@@ -54,7 +54,7 @@
 
     <form id="Form_Data" runat="server">
 
-
+        <span ID="Debug" runat="server"></span>
         <!--  static panel for dropdown box and logo -->
         <asp:Panel ID="Data_Manage" HorizontalAlign="Center" runat="server">
 
@@ -66,9 +66,6 @@
             <asp:DropDownList ID="Categories" runat="server">
     
             </asp:DropDownList>
-            <!--
-            <asp:Button ID="Generate" runat="server" OnClick="Generate_Click" Text="Get categories" />
-            -->
 
             <div class="container">
                 <div class="row">
@@ -82,12 +79,12 @@
                 <div class="row">
                     <div class="col-md-6">
 
-                        <asp:Button ID="Add_Product" runat="server" Text="Add product" OnClick="Add_Product_Click" />
+                        <asp:Button ID="Add_Product" runat="server" Text="Add Product" OnClick="Add_Product_Click" />
 
                     </div>
                     <div class="col-md-6">
 
-                        <asp:Button ID="Delete_Category" runat="server" Text="Delete category" OnClick="Delete_Category_Click" />
+                        <asp:Button ID="Delete_Category" runat="server" Text="Delete Category" OnClick="Delete_Category_Click" />
 
                     </div>
                 </div>

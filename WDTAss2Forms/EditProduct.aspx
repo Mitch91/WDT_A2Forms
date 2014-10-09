@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="WDTAss2Forms.AddProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="WDTAss2Forms.EditProduct" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,13 +7,12 @@
     
 
 <body>
-    <form id="Add_Product" runat="server">
+    <form id="Edit_Product" runat="server">
 
     <!-- NAV BAR -->
     <!--#include file="NavBar.asp"-->
-
-
-        <asp:Panel ID="Add_Panel" HorizontalAlign="Center" runat="server">
+    
+        <asp:Panel ID="Edit_Panel" runat="server">
 
             <h1>
                 <img src="images/whizbang.png" style="width: 20%; height: 20%" alt="Whiz-bang - A whiz-bang of wonders!" />
@@ -22,11 +21,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">                 
-                        <asp:Panel ID="Add_Form" runat="server">
+                        <asp:Panel ID="Edit_Form" HorizontalAlign="Center" runat="server">
 
                             <label>Enter category ID:</label>
 
-                            <asp:DropDownList ID="Categories" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="Categories" runat="server" style="height: 22px"></asp:DropDownList>
 
                             <br /><br />
 
@@ -58,15 +57,15 @@
                             </asp:RequiredFieldValidator>
 
                             <asp:RegularExpressionValidator 
-                                ID="PriceRegexValidator" runat="server" 
-                                ControlToValidate="Price" 
+                                ID="PriceRegexValidator" 
+                                runat="server" ControlToValidate="Price" 
                                 ErrorMessage="Must be a valid money value" 
                                 ValidationExpression="^[0-9]*(\.[0-9]{0,2}|)$">
                             </asp:RegularExpressionValidator>
 
                             <br/><br/>   
 
-                            <asp:Button ID="Submit_Add" runat="server" OnClick="Add_Click" Text="Submit" />
+                            <asp:Button ID="Submit_Edit" runat="server" OnClick="Edit_Click" Text="Submit" />
 
                        </asp:Panel>
                   
@@ -80,16 +79,8 @@
 
         </asp:Panel>
 
-
-
-
-        <!-- dynamic viewport/panel for list of products-->
-        <asp:Panel ID="Viewport_Add" HorizontalAlign="Center" runat="server"></asp:Panel>
-
-
+        <asp:Panel ID="Viewport_Edit" HorizontalAlign="Center" runat="server"></asp:Panel>
 
     </form>
-
-
 </body>
 </html>

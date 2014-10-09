@@ -10,7 +10,7 @@
 namespace WDTAss2Forms {
     
     
-    public partial class WebForm4 {
+    public partial class DeleteProduct {
         
         /// <summary>
         /// Delete_Product control.
@@ -38,6 +38,15 @@ namespace WDTAss2Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label status;
+        
+        /// <summary>
+        /// dataMangementLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink dataMangementLink;
         
         /// <summary>
         /// Viewport_Delete control.

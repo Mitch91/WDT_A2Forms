@@ -4,44 +4,78 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WdtA2ClassLibrary;
 
 
 namespace WDTAss2Forms
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class AddProduct : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            FillDropDown();
+        }
 
+        private void FillDropDown()
+        {
+
+            List<Category> categoryList = DatabaseSystem.GetInstance().GetCategories();
+
+            foreach (Category category in categoryList)
+            {
+                if (Categories.Items.FindByValue(category.categoryId) != null)
+                    continue;
+
+                ListItem item = new ListItem();
+                item.Text = category.title;
+                item.Value = category.categoryId;
+                Categories.Items.Add(item);
+            }
         }
 
         protected void Add_Click(object sender, EventArgs e)
         {   
 
-            string title = String.Format("{0}", Request.Form["title"]);
+            String message;
+            String msgTitle;
+            String categoryId = Categories.SelectedValue;
+            String title = ProductTitle.Value;
+            String shortDescription = ShortDesc.Value;
+            String longDescription = LongDesc.Value;
+            String price = Price.Value;
 
-
-           //add to database here.
             
+            if (DatabaseSystem.GetInstance().AddProduct(new Product(categoryId, title, shortDescription, longDescription, price)))
+            {
+                message = "Successfully added new product: " + title;
+                msgTitle = "Product Added";
+            }
+            else
+            {
+                message = "Unable to add new product: " + title;
+                msgTitle = "Unable To Add Product";
+            }
 
-            //confirm success with bootbox or something
             String jquery = @"<script>
-                $(function() {
+                    $(function() {
                
-                        bootbox.alert('Successfully added new product: "+ title + @"!', function() {});
-          
-                });
-                </script>";
-
+                            bootbox.dialog({
+                                message: '" + message + @"',
+                                title: '" + msgTitle + @"',
+                                buttons: {
+                                    main: {
+                                        label: 'OK',
+                                        callback: function(){
+                                            window.location.href = 'DataManagement.aspx';
+                                        }
+                                    }
+                                }
+                            });
+                    });
+                    </script>";
 
             Viewport_Add.Controls.Add(new LiteralControl(jquery));
 
         }
-
-
-       
-   
-
-
     }
 }

@@ -10,34 +10,34 @@
 namespace WDTAss2Forms {
     
     
-    public partial class AddProduct {
+    public partial class EditProduct {
         
         /// <summary>
-        /// Add_Product control.
+        /// Edit_Product control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Add_Product;
+        protected global::System.Web.UI.HtmlControls.HtmlForm Edit_Product;
         
         /// <summary>
-        /// Add_Panel control.
+        /// Edit_Panel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Add_Panel;
+        protected global::System.Web.UI.WebControls.Panel Edit_Panel;
         
         /// <summary>
-        /// Add_Form control.
+        /// Edit_Form control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Add_Form;
+        protected global::System.Web.UI.WebControls.Panel Edit_Form;
         
         /// <summary>
         /// Categories control.
@@ -112,21 +112,21 @@ namespace WDTAss2Forms {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator PriceRegexValidator;
         
         /// <summary>
-        /// Submit_Add control.
+        /// Submit_Edit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Submit_Add;
+        protected global::System.Web.UI.WebControls.Button Submit_Edit;
         
         /// <summary>
-        /// Viewport_Add control.
+        /// Viewport_Edit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Viewport_Add;
+        protected global::System.Web.UI.WebControls.Panel Viewport_Edit;
     }
 }

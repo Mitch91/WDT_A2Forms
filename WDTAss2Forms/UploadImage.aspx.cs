@@ -8,7 +8,7 @@ using System.IO;
 
 namespace WDTAss2Forms
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class UploadImage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,7 +18,7 @@ namespace WDTAss2Forms
         protected void Upload_Image_Click(object sender, EventArgs e)
         {
 
-            string imageURL = Server.MapPath("~/" + "images/product_images/" + File_Upload_Image.FileName);
+            String imageURL = Server.MapPath("~/" + "images/product_images/" + File_Upload_Image.FileName);
 
 
 
@@ -55,7 +55,7 @@ namespace WDTAss2Forms
 
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                    
                     Upload_Status.Controls.Add(new LiteralControl(error));

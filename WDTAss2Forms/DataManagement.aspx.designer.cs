@@ -10,7 +10,7 @@
 namespace WDTAss2Forms {
     
     
-    public partial class WebForm1 {
+    public partial class DataManagement {
         
         /// <summary>
         /// Form_Data control.
@@ -20,6 +20,15 @@ namespace WDTAss2Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm Form_Data;
+        
+        /// <summary>
+        /// Debug control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Debug;
         
         /// <summary>
         /// Data_Manage control.
@@ -38,15 +47,6 @@ namespace WDTAss2Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Categories;
-        
-        /// <summary>
-        /// Generate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Generate;
         
         /// <summary>
         /// Submit control.

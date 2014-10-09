@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClassLibrary1">
+      <HintPath>..\ClassLibrary1\bin\Debug\ClassLibrary1.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -57,6 +60,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EditProduct.aspx" />
+    <Content Include="Head.asp" />
+    <Content Include="NavBar.asp" />
     <Content Include="images\whizbang.png" />
     <Content Include="scripts\bootbox.min.js" />
     <Content Include="Web.config" />
@@ -66,6 +72,13 @@
     <Content Include="DeleteProduct.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataManagement.aspx.cs">
       <DependentUpon>DataManagement.aspx</DependentUpon>

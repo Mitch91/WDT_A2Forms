@@ -10,7 +10,7 @@
 namespace WDTAss2Forms {
     
     
-    public partial class WebForm2 {
+    public partial class UploadImage {
         
         /// <summary>
         /// Form_Upload control.
