@@ -66,12 +66,18 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
 
 
                         <asp:FileUpload ID="File_Upload_Image" runat="server" />
+                        <br />
+                        <br />
                         <asp:Button runat="server" ID="Upload_Image_Butt" Text="Upload" OnClick="Upload_Image_Click" />
-                        
+                        <br />
+                        <br />
+                        <label>Select Product</label><asp:DropDownList ID="Products" runat="server"></asp:DropDownList>
+                        <br />
+                        <br />
 
                         <asp:Panel ID="Upload_Status" HorizontalAlign="Center" runat="server"></asp:Panel>
 

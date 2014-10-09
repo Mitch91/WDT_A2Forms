@@ -135,8 +135,8 @@ namespace WdtA2ClassLibrary
             dataTable.Clear();
             command.Parameters.Clear();
 
-            //try
-            //{
+            try
+            {
                 command.CommandText = "UpdateProduct";
                 command.Parameters.AddWithValue("@pID", p.productId);
                 command.Parameters.AddWithValue("@cID", p.categoryId);
@@ -150,11 +150,43 @@ namespace WdtA2ClassLibrary
                 dbConnection.Close();
                 Debug.WriteLine("\n\nSuccess!");
                 return true;
-            //}
-            //catch (Exception)
-            //{
-            //    return false;
-            //}
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public List<Product> GetProducts()
+        {
+            List<Product> productList = new List<Product>();
+
+            dataTable.Clear();
+            command.Parameters.Clear();
+
+            try
+            {
+                command.CommandText = "GetProducts";
+                dataAdapter.SelectCommand = command;
+                dataAdapter.Fill(dataTable);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                productList.Add(new Product(row["ProductID"].ToString(),
+                        row["CategoryID"].ToString(),
+                        row["Title"].ToString(),
+                        row["ShortDescription"].ToString(),
+                        row["LongDescription"].ToString(),
+                        row["ImageUrl"].ToString(),
+                        row["Price"].ToString()));
+            }
+
+            return productList;
         }
 
         // Gets all the products for the given category ID
@@ -257,6 +289,22 @@ namespace WdtA2ClassLibrary
             {
                 return null;
             }
+        }
+
+        public Boolean UploadImage(String productId, String imgUrl)
+        {
+            dataTable.Clear();
+            command.Parameters.Clear();
+
+            command.CommandText = "UploadImage";
+            command.Parameters.AddWithValue("@pID", productId);
+            command.Parameters.AddWithValue("@imgUrl", imgUrl);
+
+            dbConnection.Open();
+            command.ExecuteNonQuery();
+            dbConnection.Close();
+
+            return true;
         }
     }
 }

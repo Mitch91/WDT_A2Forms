@@ -2,17 +2,66 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!--#include file="Head.asp"-->
+    <head runat="server">
+        <title>Whiz-bang! Admin</title>
 
-    
+        <style type ="text/css">
 
+            label {
+        
+             float: left;   
+        
+            }
+
+        </style>
+
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="scripts/bootbox.min.js"></script>
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
+
+
+    </head>
 <body>
     <form id="Edit_Product" runat="server">
 
     <!-- NAV BAR -->
-    <!--#include file="NavBar.asp"-->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="DataManagement.aspx">Whiz-bang! Admin</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="DataManagement.aspx">Select Category</a></li>
+                    <li><a href="UploadImage.aspx">Upload image</a></li>
+
+                </ul>
+
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
     
-        <asp:Panel ID="Edit_Panel" runat="server">
+        <asp:Panel ID="Edit_Panel" HorizontalAlign="Center" runat="server">
 
             <h1>
                 <img src="images/whizbang.png" style="width: 20%; height: 20%" alt="Whiz-bang - A whiz-bang of wonders!" />
@@ -34,7 +83,9 @@
                             <asp:RequiredFieldValidator 
 	                            ID="RequireTitleFieldValidator" 
 	                            runat="server" ControlToValidate="ProductTitle" 
-	                            ErrorMessage="Title cannot be Empty"></asp:RequiredFieldValidator>
+	                            ErrorMessage="Title cannot be Empty">
+
+                            </asp:RequiredFieldValidator>
 
                             <br/><br/>
 

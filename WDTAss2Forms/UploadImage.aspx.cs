@@ -6,71 +6,74 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 
+using WdtA2ClassLibrary;
+
 namespace WDTAss2Forms
 {
     public partial class UploadImage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            FillDropDown();
         }
 
         protected void Upload_Image_Click(object sender, EventArgs e)
         {
 
-            String imageURL = Server.MapPath("~/" + "images/product_images/" + File_Upload_Image.FileName);
+            String jquery;
+            String message = null;
 
+            String imageUrl = Server.MapPath("~/" + "images/product_images/" + File_Upload_Image.FileName);
+            String productId = Products.SelectedValue;
 
-
-            String success = @"<script>
-                $(function() {
-                 
-
-               bootbox.alert('Successfully uploaded image!', function() {});
-                
-                });
-                </script>";
-
-            String error = @"<script>
-                $(function() {
-                  
-
-                bootbox.alert('Error uploading file!', function() {});
-                
-                });
-                </script>";
-
-            
-
+           
             if (File_Upload_Image.HasFile)
             {
                 try
                 {
-
-                    File_Upload_Image.SaveAs(imageURL);
+                    File_Upload_Image.SaveAs(imageUrl);
 
                     //save image info to database here
-
-                    Upload_Status.Controls.Add(new LiteralControl(success));
-
-
+                    if(DatabaseSystem.GetInstance().UploadImage(productId, imageUrl))
+                    message = "Successfully uploaded image!";
                 }
                 catch (Exception)
                 {
-                   
-                    Upload_Status.Controls.Add(new LiteralControl(error));
+                    message = "Unable to upload image!";
                 }
             }
             else
             {
-
-                Upload_Status.Controls.Add(new LiteralControl(error));
-
+                message = "Unable to upload image!";
             }
 
+            
+            jquery = @"<script>
+                $(function() {
+                 
 
+               bootbox.alert('" + message + @"', function() {});
+                
+                });
+                </script>";
 
+            Upload_Status.Controls.Add(new LiteralControl(jquery));
+        }
+
+        private void FillDropDown()
+        {
+            List<Product> products = DatabaseSystem.GetInstance().GetProducts();
+
+            foreach (Product category in products)
+            {
+                if (Products.Items.FindByValue(category.categoryId) != null)
+                    continue;
+
+                ListItem item = new ListItem();
+                item.Text = category.title;
+                item.Value = category.productId;
+                Products.Items.Add(item);
+            }
         }
     }
-
 }
