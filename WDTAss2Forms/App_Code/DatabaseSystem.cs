@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
-namespace WdtA2ClassLibrary
+namespace WDTAss2Forms.App_Code
 {
     public class DatabaseSystem
     {

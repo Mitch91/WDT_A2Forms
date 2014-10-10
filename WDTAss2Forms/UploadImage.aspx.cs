@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 
-using WdtA2ClassLibrary;
+using WDTAss2Forms.App_Code;
 
 namespace WDTAss2Forms
 {
@@ -32,7 +32,7 @@ namespace WDTAss2Forms
                 try
                 {
                     File_Upload_Image.SaveAs(imageUrl);
-
+                    
                     //save image info to database here
                     if(DatabaseSystem.GetInstance().UploadImage(productId, imageUrl))
                     message = "Successfully uploaded image!";

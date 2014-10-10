@@ -5,7 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WdtA2ClassLibrary;
+
+using WDTAss2Forms.App_Code;
 
 namespace WDTAss2Forms
 {

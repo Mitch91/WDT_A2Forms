@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WdtA2ClassLibrary
+namespace WDTAss2Forms.App_Code
 {
     public class Category
     {

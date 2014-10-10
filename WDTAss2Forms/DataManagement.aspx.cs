@@ -9,8 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Services;
 
-using WdtA2ClassLibrary;
-
+using WDTAss2Forms.App_Code;
 namespace WDTAss2Forms
 {
     public partial class DataManagement : System.Web.UI.Page
